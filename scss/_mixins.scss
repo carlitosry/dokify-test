@@ -1,0 +1,83 @@
+@mixin rotate {
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+@mixin media-query-generator($media) {
+  @media #{$media}{
+    @content;
+  }
+}
+
+
+@mixin generate-spacing {
+  @each $type, $t in $types {
+    @each $direction, $d in $directions {
+      $coord: 'y';
+      @if $d == 'l' or $d == 'r'{
+        $coord: 'x'
+      }
+      @for $i from 0 through ($num-of-classes) {
+        .#{$t}#{$d}-#{$i}, .#{$t}#{$coord}-#{$i}{
+          #{$type}-#{$direction}: (#{$i*.5}rem);
+        }
+      }
+
+    }
+    @each $query, $q in $queries {
+      @media #{$query} {
+        @each $direction, $d in $directions {
+          $coord: 'y';
+          @if $d == 'l' or $d == 'r'{
+            $coord: 'x'
+          }
+          @for $i from 0 through ($num-of-classes){
+            .#{$t}#{$d}-#{$q}-#{$i}, .#{$t}#{$coord}-#{$q}-#{$i} {
+              #{$type}-#{$direction}: (#{$i*.5}rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-selector($num, $className){
+  $foo : '';
+  @for $i from 1 through $num {
+    $foo : $foo + '.' + $className + '-' + $i + ', ';
+  }
+  #{$foo} {
+    @content;
+  }
+}
+
+@mixin generate-class-color($colors){
+  @each $color, $c in $colors {
+    .text-#{$c}{
+      color:#{$color} !important;
+    }
+
+    .bg-#{$c}{
+      background-color:#{$color} !important; ;
+    }
+  }
+}
+
+
+$directionx: (
+        'left':'l',
+        'right':'r'
+);
+
+@mixin generate-column-spacing(){
+  @each $direction, $d in $directionx {
+
+    @for $i from 0 through ($qnt-col){
+      .#{$d}-spacing-#{$i} {
+        margin-#{$direction}: 100% / $qnt-col * $i;
+      }
+    }
+  }
+}

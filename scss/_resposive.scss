@@ -1,0 +1,93 @@
+/*
+ * Media Querys Standars
+ */
+
+
+@each $query, $q in $queries {
+  @include generate-selector($qnt-col, column-#{$q}){
+    position: relative;
+    float: left;
+  }
+}
+
+@for $i from 1 through $qnt-col {
+  .column-#{$i} {
+    width: 100% / $qnt-col * $i;
+  }
+}
+
+@include generate-column-spacing();
+
+@include generate-selector($qnt-col, column){
+  position: relative;
+  float: left;
+}
+
+@include media-query-generator($q-large) {
+
+  @for $i from 1 through $qnt-col {
+    .column-lg-#{$i} {
+      width: 100% / $qnt-col * $i;
+    }
+  }
+
+  .search-input {
+    min-width: 250px;
+  }
+
+  .hide-lg{
+    display: none;
+  }
+
+  .navbar-sidenav{
+    .img-logo{
+
+    }
+  }
+}
+
+@include media-query-generator($q-medium) {
+
+  @for $i from 1 through $qnt-col {
+    .column-md-#{$i} {
+      width: 100% / $qnt-col * $i;
+    }
+  }
+
+  .hide-md{
+    display: none;
+  }
+
+}
+
+@include media-query-generator($q-small) {
+
+  @for $i from 1 through $qnt-col {
+    .column-sm-#{$i} {
+      width: 100% / $qnt-col * $i;
+    }
+  }
+
+  .hide-sm{
+    display: none;
+  }
+
+  .content-column-primary{
+
+  }
+
+  .search-input {
+    min-width: auto;
+  }
+
+}
+
+@include media-query-generator($q-xsmall) {
+
+  @for $i from 1 through $qnt-col {
+    .column-xs-#{$i} {
+      width: 100% / $qnt-col * $i;
+    }
+  }
+
+}

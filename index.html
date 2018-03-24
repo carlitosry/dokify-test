@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <title>Dokify Admin</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/admin.min.css" />
+  <link rel="stylesheet" href="vendor/iconfont/material-icons.css" />
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <style>
+    canvas {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <header>
+    <nav class="navbar fixed-top section" id="mainNav">
+
+      <ul class="nav-left-items list-inline">
+        <li class="nav-item">
+          <a class="navbar-logo" href="#"><img src="img/logo.png" class="ml-5 mr-2" title="Dokify"></a>
+        </li>
+        <li class="nav-item">
+          <form class="mx-2">
+            <input class="search-input" type="text" placeholder="Buscar">
+          </form>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="button button-gray button-small mx-2" title="Ayuda">Ayuda</a>
+        </li>
+      </ul>
+
+      <ul class="nav-right-items list-inline mr-5 mx-md-0">
+        <li class="nav-item ml-2 badge-content">
+          <span class="badge badge-primary" id="notif_alert">1</span>
+          <ul class="notify-dialog">
+            <li class="icon-principal text-center">
+              <i class="material-icons text-red">notifications_active</i>
+              Notificaciones
+            </li>
+            <ul id="sorteable-notify" class="connectedSortable">
+              <li class="notify-item">
+                <i class="material-icons">open_with</i>
+                <h3 class="title">Has añadido un nuevo documento</h3>
+                <span>Materials with seamless deliverables. Objectively enable next-generation</span>
+              </li>
+              <li class="notify-item">
+                <i class="material-icons">open_with</i>
+                <h3 class="title">Has añadido un nuevo documento</h3>
+                <span>Materials with seamless deliverables. Objectively enable next-generation</span>
+              </li>
+            </ul>
+            <li id="trash-notify" class="py-2 px-2">
+              <i class="material-icons text-gray-700">delete</i>
+              <span>Arrastra aquí las notificaciones
+              para eliminarlas
+              </span>
+            </li>
+          </ul>
+
+        </li>
+        <li class="nav-item li-buttom py-2 ml-4">
+          <a href="#" class="link-demo px-5"><i class="material-icons">home</i> <span>dokify demo</span></a>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <section class="row">
+    <aside class="column-3 hide-sm">
+      <ul class="navbar-nav navbar-sidenav pl-5">
+        <li class="img-logo text-center my-3">
+          <img src="img/company-logo.png" alt="Dokify" class="img-responsive">
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">dashboard</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="material-icons">description</i>
+            <span class="nav-link-text">documentos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="material-icons">people</i>
+            <span class="nav-link-text">clientes</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="material-icons">person</i>
+            <span class="nav-link-text">empleados</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <article class="column-12 column-sm-15">
+      <div class="content-wrapper">
+        <div class="title-dashboard mb-4">
+          <h2 class="mb-0 mt-2">dokify demo</h2>
+          <span class="subtitle">CIF 50444555</span>
+        </div>
+
+        <div class="row">
+          <div class="column-10 content-column-primary">
+            <div class="row mb-1">
+              <div class="column-5">
+                <div class="card ">
+                  <div class="title">
+                    <h2>documentos <i class="material-icons">description</i></h2>
+                  </div>
+                  <div class="content">
+                    <canvas id="chart-area"></canvas>
+                  </div>
+                  <div class="card-foot text-center">
+                    1 pendiente <i class="fa fa-circle text-red" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="column-5">
+                <div class="card">
+                  <div class="title">
+                    <h2>empleados <i class="material-icons">person</i></h2>
+                  </div>
+                  <div class="content">
+                    <canvas id="chart-area-1"></canvas>
+                  </div>
+                  <div class="card-foot text-center">
+                    0 <i class="fa fa-circle text-red" aria-hidden="true"></i>
+                    16 <i class="fa fa-circle text-green" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="column-5">
+                <div class="card">
+                  <div class="title">
+                    <h2>máquinas <i class="material-icons">build</i></h2>
+                  </div>
+                  <div class="content">
+                    <canvas id="chart-area-2"></canvas>
+                  </div>
+                  <div class="card-foot text-center">
+                    0 <i class="fa fa-circle text-red" aria-hidden="true"></i>
+                    16 <i class="fa fa-circle text-gray-600" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-1">
+              <div class="column-15">
+                <div class="card my-2">
+                  <div class="title">
+                      <h2>clientes <i class="material-icons">insert_comment</i></h2>
+                  </div>
+                  <div class="content content-clients row">
+                    <div class="client">
+                      <div class="content">
+                        <img src="img/client/carrefour.png" alt="Carrefour">
+                        <h3 class="title">Carrefour <i class="fa fa-circle text-green" aria-hidden="true"></i></h3>
+                      </div>
+                    </div>
+                    <div class="client">
+                      <div class="content">
+                        <img src="img/client/clarstar.png" alt="Clarstar">
+                        <h3 class="title">Clarstar <i class="fa fa-circle text-green" aria-hidden="true"></i></h3>
+                      </div>
+                    </div>
+                    <div class="client">
+                      <div class="content">
+                        <img src="img/client/enercom.png" alt="Enercom">
+                        <h3 class="title">Enercom <i class="fa fa-circle text-red" aria-hidden="true"></i></h3>
+                      </div>
+                    </div>
+                    <div class="client">
+                      <div class="content">
+                        <img src="img/client/fedex.png" alt="Fedex">
+                        <h3 class="title">Fedex <i class="fa fa-circle text-red" aria-hidden="true"></i></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column-15">
+                <div class="card report-content py-2">
+                  <div class="column-5 l-spacing-10">
+                    <h3 class="title">Informe Resumen de Cumplimentación</h3>
+                    <p>
+                      Materials with seamless deliverables. Objectively enable next-generation collaboration
+                    </p>
+                    <button type="button" class="button button-yellow">
+                      Descargar informe
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column-4">
+            <div class="card feed-news">
+              <div class="title">
+                <h2>notícias <i class="material-icons">insert_comment</i></h2>
+              </div>
+              <div class="content">
+                <article>
+                  <h4><a href="#">Proactively synergize customer directed</a></h4>
+                  <p>Materials with seamless deliverables. Objectively enable next-generation collaboration and idea-sharing for...</p>
+                </article>
+                <article>
+                  <h4><a href="#">Proactively synergize customer directed</a></h4>
+                  <p>Materials with seamless deliverables. Objectively enable next-generation collaboration and idea-sharing for...</p>
+                </article>
+                <article>
+                  <h4><a href="#">Proactively synergize customer directed</a></h4>
+                  <p>Materials with seamless deliverables. Objectively enable next-generation collaboration and idea-sharing for...</p>
+                </article>
+                <article>
+                  <h4><a href="#">Proactively synergize customer directed</a></h4>
+                  <p>Materials with seamless deliverables. Objectively enable next-generation collaboration and idea-sharing for...</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+
+    </article>
+  </section>
+
+
+</div>
+
+  <section class="">
+    <article>
+
+    </article>
+  </section>
+
+  <footer>
+    Creado por mi el 2011
+  </footer>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="vendor/chart.js/Chart.bundle.js"></script>
+<script src="vendor/chart.js/utils.js"></script>
+<script>
+
+    window.onload = function() {
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        var ctx1 = document.getElementById("chart-area-1").getContext("2d");
+        var ctx2 = document.getElementById("chart-area-2").getContext("2d");
+        window.myDoughnut = new Chart(ctx, config);
+        window.myDoughnut = new Chart(ctx1, config1);
+        window.myDoughnut = new Chart(ctx2, config2);
+    };
+
+
+
+    $("#sorteable-notify").sortable().disableSelection();
+
+    $("#trash-notify").droppable({
+        accept: ".connectedSortable li.notify-item",
+        hoverClass: "ui-state-hover",
+        drop: function(ev, ui) {
+            ui.draggable.remove();
+        }
+    });
+
+</script>
+
+</body>
+</html>

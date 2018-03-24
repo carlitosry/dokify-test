@@ -1,0 +1,50 @@
+{
+    "title": "Dokify Admin",
+    "name": "dokify-admin",
+    "version": "1.0.0",
+    "description": "A page app dashboard HTML.",
+    "keywords": [
+        "css",
+        "sass",
+        "html",
+        "responsive",
+        "theme",
+        "template",
+        "admin",
+        "app"
+    ],
+    "homepage": "https://carlitosry/dokify-test",
+    "bugs": {
+        "url": "https://github.com/carlitosry/",
+        "email": "hola@calritosry.com"
+    },
+    "license": "MIT",
+    "author": "Dokify Admin",
+    "contributors": [
+        "Carlos Reyes (http://calritosry.com)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/calritosry/dokify-test.git"
+    },
+    "dependencies": {
+        "chart.js": "^2.7.1",
+        "font-awesome": "4.7.0",
+        "gulp-install": "^1.1.0",
+        "jquery": "3.3.1",
+        "jquery.easing": "^1.4.1",
+        "material-design-icons": "^3.0.1"
+    },
+    "devDependencies": {
+        "browser-sync": "2.23.6",
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "3.9.2",
+        "gulp-header": "2.0.1",
+        "gulp-html-beautify": "^1.0.1",
+        "gulp-pug": "^3.3.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-uglify": "3.0.0",
+        "gulp-watch-sass": "^1.4.0"
+    }
+}
