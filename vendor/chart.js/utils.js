@@ -1,7 +1,7 @@
 'use strict';
 
 window.chartColors = {
-	red: '#dc3545',
+	red: '#e17170',
 	orange: 'rgb(255, 159, 64)',
 	yellow: 'rgb(255, 205, 86)',
 	green: '#9cde97',

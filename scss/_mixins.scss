@@ -80,4 +80,18 @@ $directionx: (
       }
     }
   }
+
+  @each $query, $q in $queries {
+    @media #{$query} {
+      @each $direction, $d in $directionx {
+        @for $i from 0 through ($qnt-col){
+          .#{$d}-spacing-#{$q}-#{$i} {
+            margin-#{$direction}: 100% / $qnt-col * $i;
+          }
+        }
+      }
+    }
+
+  }
+
 }

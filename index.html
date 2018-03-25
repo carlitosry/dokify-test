@@ -40,25 +40,35 @@
       <ul class="nav-right-items list-inline mr-5 mx-md-0">
         <li class="nav-item ml-2 badge-content">
           <span class="badge badge-primary" id="notif_alert">1</span>
-          <ul class="notify-dialog">
+          <ul class="notify-dialog hide">
             <li class="icon-principal text-center">
-              <i class="material-icons text-red">notifications_active</i>
-              Notificaciones
+              <span class="title">
+                <i class="material-icons text-red">notifications_active</i>
+                Notificaciones
+              </span>
+
+              <ul id="sorteable-notify" class="connectedSortable">
+                <li class="notify-item">
+                  <i class="material-icons">open_with</i>
+                  <h3 class="title">Has añadido un nuevo documento</h3>
+                  <span>Materials with seamless deliverables. Objectively enable next-generation</span>
+                </li>
+                <li class="notify-item">
+                  <i class="material-icons">open_with</i>
+                  <h3 class="title">Tienes un nuevo mensaje</h3>
+                  <span>Materials with seamless deliverables.</span>
+                </li>
+                <li class="notify-item">
+                  <i class="material-icons">open_with</i>
+                  <h3 class="title">Has añadido un nuevo documento</h3>
+                  <span>Materials with seamless deliverables. Objectively enable next-generation</span>
+                </li>
+
+              </ul>
             </li>
-            <ul id="sorteable-notify" class="connectedSortable">
-              <li class="notify-item">
-                <i class="material-icons">open_with</i>
-                <h3 class="title">Has añadido un nuevo documento</h3>
-                <span>Materials with seamless deliverables. Objectively enable next-generation</span>
-              </li>
-              <li class="notify-item">
-                <i class="material-icons">open_with</i>
-                <h3 class="title">Has añadido un nuevo documento</h3>
-                <span>Materials with seamless deliverables. Objectively enable next-generation</span>
-              </li>
-            </ul>
+
             <li id="trash-notify" class="py-2 px-2">
-              <i class="material-icons text-gray-700">delete</i>
+              <i class="material-icons text-gray-600">delete</i>
               <span>Arrastra aquí las notificaciones
               para eliminarlas
               </span>
@@ -66,7 +76,7 @@
           </ul>
 
         </li>
-        <li class="nav-item li-buttom py-2 ml-4">
+        <li class="nav-item item-button ml-3">
           <a href="#" class="link-demo px-5"><i class="material-icons">home</i> <span>dokify demo</span></a>
         </li>
       </ul>
@@ -198,15 +208,18 @@
             </div>
             <div class="row">
               <div class="column-15">
-                <div class="card report-content py-2">
-                  <div class="column-5 l-spacing-10">
-                    <h3 class="title">Informe Resumen de Cumplimentación</h3>
-                    <p>
-                      Materials with seamless deliverables. Objectively enable next-generation collaboration
-                    </p>
-                    <button type="button" class="button button-yellow">
-                      Descargar informe
-                    </button>
+                <div class="card report-content py-4">
+                  <div class="column-5 column-sm-15 l-spacing-sm-0 l-spacing-9 bg-d">
+                    <div class="content-text">
+                      <h3 class="title">Informe Resumen de Cumplimentación</h3>
+                      <p>
+                        Materials with seamless deliverables. Objectively enable next-generation collaboration
+                      </p>
+                      <button type="button" class="button button-yellow">
+                        Descargar informe
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -245,18 +258,11 @@
     </article>
   </section>
 
-
-</div>
-
-  <section class="">
-    <article>
-
-    </article>
-  </section>
-
   <footer>
     Creado por mi el 2011
   </footer>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -283,6 +289,11 @@
         drop: function(ev, ui) {
             ui.draggable.remove();
         }
+    });
+
+    $( "#notif_alert" ).click(function() {
+        $( ".notify-dialog" ).toggle( "slow", function() {
+        });
     });
 
 </script>
