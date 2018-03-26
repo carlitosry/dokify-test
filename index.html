@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 
+<!--
+
+ ██████╗  ██████╗ █████╗ ██████╗ ██╗     ██╗████████╗ ██████╗ ███████╗██████╗ ██╗   ██╗
+██╔═══██╗██╔════╝██╔══██╗██╔══██╗██║     ██║╚══██╔══╝██╔═══██╗██╔════╝██╔══██╗╚██╗ ██╔╝
+██║██╗██║██║     ███████║██████╔╝██║     ██║   ██║   ██║   ██║███████╗██████╔╝ ╚████╔╝
+██║██║██║██║     ██╔══██║██╔══██╗██║     ██║   ██║   ██║   ██║╚════██║██╔══██╗  ╚██╔╝
+╚█║████╔╝╚██████╗██║  ██║██║  ██║███████╗██║   ██║   ╚██████╔╝███████║██║  ██║   ██║
+ ╚╝╚═══╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝
+ @2018
+ http://carlitosry.com
+ followme @carlitosry
+
+-->
+
 <html lang="es">
 
 <head>
@@ -9,7 +23,7 @@
   <link rel="stylesheet" href="vendor/iconfont/material-icons.css" />
   <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
   <link rel="stylesheet" href="vendor/custom-icon/style.css" />
-  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="shortcut icon" href="img/niceicon.png" />
   <style>
     canvas {
       -moz-user-select: none;
@@ -91,6 +105,7 @@
 
   <section class="row">
 
+    <!-- Sidebar of navigation / Barra lareral de navegacion -->
     <aside id="navBar-sidebar" class="column-2 column-sm-12 hide-sm">
       <ul class="navbar-nav navbar-sidenav pl-lg-2 pl-md-2">
         <li class="img-logo text-center my-3 my-md-1">
@@ -134,8 +149,11 @@
       </div>
     </aside>
 
+    <!-- Main Conetent -->
     <article class="column-10 column-sm-12">
       <div class="content-wrapper">
+
+        <!-- title Content -->
         <div class="title-dashboard mb-2 mb-lg-5">
           <h2 class="mb-0 mt-2">dokify demo</h2>
           <span class="subtitle">CIF 50444555</span>
@@ -143,6 +161,8 @@
 
         <div class="row">
           <div class="column-9 column-sm-12 content-column-primary">
+
+            <!-- chart Content -->
             <div class="row mb-1 columns-chart">
               <div class="column-4 column-sm-12">
                 <div class="card ">
@@ -186,6 +206,8 @@
                 </div>
               </div>
             </div>
+
+            <!-- Clients Content-->
             <div class="row my-1">
               <div class="column-12">
                 <div class="card my-2">
@@ -221,6 +243,8 @@
                 </div>
               </div>
             </div>
+
+            <!-- Report content-->
             <div class="row">
               <div class="column-12">
                 <div class="card report-content py-4">
@@ -241,6 +265,7 @@
             </div>
           </div>
 
+          <!-- News column's Container -->
           <div class="column-3 column-sm-12 mt-sm-2">
             <div class="card feed-news">
               <div class="title">
@@ -273,7 +298,10 @@
     </article>
   </section>
 
+  <!-- Footer Content-->
   <footer class="text-center py-2">
+
+    <!-- Menu Fotter content -->
     <ul class="menu-footer list-inline float-l mx-3">
       <li class="menu-footer-item"><a href="#">seguridad</a></li>
       <li class="menu-footer-item"><a href="#">experiencia</a></li>
@@ -281,8 +309,10 @@
       <li class="menu-footer-item"><a href="#">servicios</a></li>
     </ul>
 
+    <!--  Logo Fotter -->
     <img src="img/company-logo.png" class="logo-footer" alt="Dokify">
 
+    <!-- Menu Fotter content -->
     <ul class="menu-footer list-inline float-r mx-3">
       <li class="menu-footer-item"><a href="#">estado</a></li>
       <li class="menu-footer-item"><a href="#">blog</a></li>
@@ -292,13 +322,16 @@
   </footer>
 </div>
 
-
+<!-- import of .js and Jquery files -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="vendor/chart.js/Chart.bundle.js"></script>
+
+<!-- Custom js -->
 <script src="js/main.js"></script>
 <script>
 
+    // Inicialization and config of chart
     window.onload = function() {
         var ctx = document.getElementById("chart-area").getContext("2d");
         var ctx1 = document.getElementById("chart-area-1").getContext("2d");
@@ -308,8 +341,8 @@
         window.myDoughnut = new Chart(ctx2, config2);
     };
 
+    //js that Allow  droppable to trash in content notification
     $("#sorteable-notify").sortable().disableSelection();
-
     $("#trash-notify").droppable({
         accept: ".connectedSortable li.notify-item",
         hoverClass: "ui-state-hover",
@@ -318,11 +351,13 @@
         }
     });
 
+    //JS to notifications ussing toggle of Jquery to hide and show when to do click
     $( "#notif_alert" ).click(function() {
         $( ".notify-dialog" ).toggle( "slow", function() {
         });
     });
 
+    //JS to show or hide sidebar in resposive quiery to smartphone
     $( ".menu-toggle a" ).click(function() {
         $( "#navBar-sidebar" ).toggle( "slow", function() {
         });
