@@ -47,11 +47,11 @@ body.fixed-nav {
 
 .container {
   margin-top: 60px;
+  margin-bottom: 10rem;
 }
 .content-wrapper {
   min-height: calc(100vh - #{$sticky-footer-height});
   padding: 1rem;
-  padding-left: 2rem;
 }
 
 .row {
@@ -143,9 +143,7 @@ input{
 
     }
 
-
-
-    .icon-principal{
+    .principal-icon{
       font-size: 1rem;
       font-weight: 500;
       line-height: 1.4;
@@ -187,7 +185,6 @@ input{
         line-height: 1.5;
         font-size: .8rem;
       }
-
     }
 
     #trash-notify {
@@ -215,6 +212,7 @@ input{
   }
 
 }
+
 .badge{
   padding: .4rem .5rem;
   line-height: 1;
@@ -225,9 +223,6 @@ input{
   background-color: $red;
   color: $white;
 }
-
-
-
 
 .card {
   margin: auto .5rem;
@@ -310,9 +305,28 @@ input{
     overflow-y: scroll;
   }
 }
+form{
+  position: relative;
+  &:before {
+    content: "search";
+    font-family: 'Material Icons', Arial;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    display: inline-block;
+    position: absolute;
+    left: .5rem;
+    top: 0.4rem;
+    height: 100%;
+    line-height: 1;
+    color: $gray-500;
+  }
 
-.search-input {
-  min-width: 250px;
+  .search-input {
+    min-width: 250px;
+    padding-left: 1.5rem;
+  }
+
 }
 
 .content-clients {
@@ -339,9 +353,10 @@ input{
 }
 
 .report-content{
-  background-image: url('../img/report-img.png');
-  background-repeat: no-repeat;
-  background-position: bottom left;
+    background-image: url(../img/report-img.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 60%;
 
   .content-text{
     padding: 0 1rem;
@@ -362,5 +377,45 @@ input{
   h2{color: $black; font-size: 1rem}
   .subtitle{
     color: $gray-600;
+  }
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  border-top: solid 2px $yellow;
+  position: absolute;
+
+  .menu-footer{
+    padding-top: 1rem;
+
+    .menu-footer-item{
+      margin: 0 10px;
+
+      a{
+        color: $blue;
+      }
+    }
+  }
+  .logo-footer{
+    max-width: 50px;
+  }
+
+}
+
+
+.menu-toggle{
+  height: 56px;
+  line-height: 56px;
+  position: relative;
+  cursor: pointer;
+  border-left: solid 1px $gray-300;
+
+
+  a{
+    display: inline-block;
+    padding: 1rem 0;
+    line-height: 1;
+
   }
 }

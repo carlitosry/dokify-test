@@ -42,7 +42,8 @@ $transition-default: color .15s ease-in-out,background-color .15s ease-in-out,bo
 $q-xsmall: '(max-width: 468px)';
 $q-small: '(max-width: 768px)';
 $q-medium: '(max-width: 992px)';
-$q-large: '(min-width: 1200px)';
+$q-large: '(min-width: 993px)';
+$q-maxlarge: '(min-width: 1199px)';
 
 //Grid Col Quantity
 $qnt-col: 12;
@@ -59,10 +60,10 @@ $types: (
   'padding':'p'
 );
 $queries: (
-  $q-xsmall: 'xs',
-  $q-small: 'sm',
-  $q-medium: 'md',
-  $q-large: 'lg'
+        $q-large: 'lg',
+        $q-medium: 'md',
+        $q-small: 'sm',
+        $q-xsmall: 'xs'
 );
 
 $colors:(

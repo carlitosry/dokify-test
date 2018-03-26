@@ -60,12 +60,14 @@
 
 .text-center{
   text-align: center !important;
+
 }
 
 
 .hide{
   display: none;
 }
+
 
 .bg-d{
   background: rgba(255,255,255,0.03);
@@ -76,4 +78,12 @@
   background: -ms-linear-gradient(left, rgba(255,255,255,0.03) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 53%, rgba(255,255,255,1) 100%);
   background: linear-gradient(to right, rgba(255,255,255,0.03) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 53%, rgba(255,255,255,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+}
+
+.float-l{
+  float: left;
+}
+
+.float-r{
+  float: right;
 }

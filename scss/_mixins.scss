@@ -20,7 +20,7 @@
       }
       @for $i from 0 through ($num-of-classes) {
         .#{$t}#{$d}-#{$i}, .#{$t}#{$coord}-#{$i}{
-          #{$type}-#{$direction}: (#{$i*.5}rem);
+          #{$type}-#{$direction}: (#{$i*.5}rem) !important;
         }
       }
 
@@ -34,7 +34,7 @@
           }
           @for $i from 0 through ($num-of-classes){
             .#{$t}#{$d}-#{$q}-#{$i}, .#{$t}#{$coord}-#{$q}-#{$i} {
-              #{$type}-#{$direction}: (#{$i*.5}rem);
+              #{$type}-#{$direction}: (#{$i*.5}rem) !important;
             }
           }
         }

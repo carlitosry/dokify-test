@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/admin.min.css" />
   <link rel="stylesheet" href="vendor/iconfont/material-icons.css" />
   <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="vendor/custom-icon/style.css" />
   <link rel="shortcut icon" href="favicon.ico" />
   <style>
     canvas {
@@ -21,27 +22,26 @@
 <body>
 <div class="container">
   <header>
+    <!-- Menu of topb bar-->
     <nav class="navbar fixed-top section" id="mainNav">
-
       <ul class="nav-left-items list-inline">
         <li class="nav-item">
-          <a class="navbar-logo" href="#"><img src="img/logo.png" class="ml-5 mr-2" title="Dokify"></a>
+          <a class="navbar-logo" href="#"><img src="img/logo.png" class="ml-5 mr-2 mx-sm-1" title="Dokify"></a>
         </li>
         <li class="nav-item">
-          <form class="mx-2">
+          <form class="mx-2 mx-sm-0">
             <input class="search-input" type="text" placeholder="Buscar">
           </form>
         </li>
-        <li class="nav-item">
+        <li class="nav-item hide-sm">
           <a href="#" class="button button-gray button-small mx-2" title="Ayuda">Ayuda</a>
         </li>
       </ul>
-
       <ul class="nav-right-items list-inline mr-5 mx-md-0">
-        <li class="nav-item ml-2 badge-content">
+        <li class="nav-item ml-2 badge-content mr-sm-2">
           <span class="badge badge-primary" id="notif_alert">1</span>
           <ul class="notify-dialog hide">
-            <li class="icon-principal text-center">
+            <li class="principal-icon text-center">
               <span class="title">
                 <i class="material-icons text-red">notifications_active</i>
                 Notificaciones
@@ -49,17 +49,17 @@
 
               <ul id="sorteable-notify" class="connectedSortable">
                 <li class="notify-item">
-                  <i class="material-icons">open_with</i>
+                  <i class="fa fa-arrows" aria-hidden="true"></i>
                   <h3 class="title">Has añadido un nuevo documento</h3>
                   <span>Materials with seamless deliverables. Objectively enable next-generation</span>
                 </li>
                 <li class="notify-item">
-                  <i class="material-icons">open_with</i>
+                  <i class="fa fa-arrows" aria-hidden="true"></i>
                   <h3 class="title">Tienes un nuevo mensaje</h3>
                   <span>Materials with seamless deliverables.</span>
                 </li>
                 <li class="notify-item">
-                  <i class="material-icons">open_with</i>
+                  <i class="fa fa-arrows" aria-hidden="true"></i>
                   <h3 class="title">Has añadido un nuevo documento</h3>
                   <span>Materials with seamless deliverables. Objectively enable next-generation</span>
                 </li>
@@ -76,60 +76,75 @@
           </ul>
 
         </li>
-        <li class="nav-item item-button ml-3">
+        <li class="nav-item item-button ml-3 hide-sm">
           <a href="#" class="link-demo px-5"><i class="material-icons">home</i> <span>dokify demo</span></a>
         </li>
-      </ul>
 
+        <li class="nav-item menu-toggle hide-lg hide-md show-sm">
+          <a href="#" class="px-2">
+            <i class="material-icons">menu</i>
+          </a>
+        </li>
+      </ul>
     </nav>
   </header>
 
   <section class="row">
-    <aside class="column-2 hide-sm">
-      <ul class="navbar-nav navbar-sidenav pl-5">
-        <li class="img-logo text-center my-3">
+
+    <aside id="navBar-sidebar" class="column-2 column-sm-12 hide-sm">
+      <ul class="navbar-nav navbar-sidenav pl-lg-2 pl-md-2">
+        <li class="img-logo text-center my-3 my-md-1">
           <img src="img/company-logo.png" alt="Dokify" class="img-responsive">
         </li>
 
-        <li class="nav-item active">
+        <li class="nav-item active ml-lg-3">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">dashboard</span>
           </a>
         </li>
-
-        <li class="nav-item">
+        <li class="nav-item ml-lg-2">
           <a class="nav-link" href="#">
             <i class="material-icons">description</i>
             <span class="nav-link-text">documentos</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ml-lg-2">
           <a class="nav-link" href="#">
-            <i class="material-icons">people</i>
+            <i class="icon-clientes"></i>
             <span class="nav-link-text">clientes</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ml-lg-2">
           <a class="nav-link" href="#">
-            <i class="material-icons">person</i>
+            <i class="icon-empleados"></i>
             <span class="nav-link-text">empleados</span>
           </a>
         </li>
+        <li class="nav-item ml-lg-2">
+          <a class="nav-link" href="#">
+            <i class="icon-maquinas"></i>
+            <span class="nav-link-text">maquinas</span>
+          </a>
+        </li>
+        <li class="nav-item ml-lg-2 hide show-sm">
+          <a href="#" class="button button-gray my-sm-2 mx-2" title="Ayuda">Ayuda</a>
+        </li>
+
       </ul>
     </aside>
 
     <article class="column-10 column-sm-12">
       <div class="content-wrapper">
-        <div class="title-dashboard mb-4">
+        <div class="title-dashboard mb-2 mb-lg-5">
           <h2 class="mb-0 mt-2">dokify demo</h2>
           <span class="subtitle">CIF 50444555</span>
         </div>
 
         <div class="row">
-          <div class="column-9 content-column-primary">
-            <div class="row mb-1">
-              <div class="column-4">
+          <div class="column-9 column-sm-12 content-column-primary">
+            <div class="row mb-1 columns-chart">
+              <div class="column-4 column-sm-12">
                 <div class="card ">
                   <div class="title">
                     <h2>documentos <i class="material-icons">description</i></h2>
@@ -142,10 +157,10 @@
                   </div>
                 </div>
               </div>
-              <div class="column-4">
+              <div class="column-4 column-sm-12">
                 <div class="card">
                   <div class="title">
-                    <h2>empleados <i class="material-icons">person</i></h2>
+                    <h2>empleados <i class="icon-empleados"></i></h2>
                   </div>
                   <div class="content">
                     <canvas id="chart-area-1"></canvas>
@@ -156,10 +171,10 @@
                   </div>
                 </div>
               </div>
-              <div class="column-4">
+              <div class="column-4 column-sm-12">
                 <div class="card">
                   <div class="title">
-                    <h2>máquinas <i class="material-icons">build</i></h2>
+                    <h2>máquinas <i class="icon-maquinas"></i></h2>
                   </div>
                   <div class="content">
                     <canvas id="chart-area-2"></canvas>
@@ -175,7 +190,7 @@
               <div class="column-12">
                 <div class="card my-2">
                   <div class="title">
-                      <h2>clientes <i class="material-icons">insert_comment</i></h2>
+                      <h2>clientes <i class="icon-clientes"></i></h2>
                   </div>
                   <div class="content content-clients row">
                     <div class="client">
@@ -209,7 +224,7 @@
             <div class="row">
               <div class="column-12">
                 <div class="card report-content py-4">
-                  <div class="column-5 column-sm-12 l-spacing-sm-0 l-spacing-9 bg-d">
+                  <div class="column-lg-4 column-md-5 column-sm-12 l-spacing-sm-0 l-spacing-md-7 l-spacing-lg-8 bg-d">
                     <div class="content-text">
                       <h3 class="title">Informe Resumen de Cumplimentación</h3>
                       <p>
@@ -226,7 +241,7 @@
             </div>
           </div>
 
-          <div class="column-3">
+          <div class="column-3 column-sm-12 mt-sm-2">
             <div class="card feed-news">
               <div class="title">
                 <h2>notícias <i class="material-icons">insert_comment</i></h2>
@@ -258,8 +273,22 @@
     </article>
   </section>
 
-  <footer>
-    Creado por mi el 2011
+  <footer class="text-center py-2">
+    <ul class="menu-footer list-inline float-l mx-3">
+      <li class="menu-footer-item"><a href="#">seguridad</a></li>
+      <li class="menu-footer-item"><a href="#">experiencia</a></li>
+      <li class="menu-footer-item"><a href="#">planes</a></li>
+      <li class="menu-footer-item"><a href="#">servicios</a></li>
+    </ul>
+
+    <img src="img/company-logo.png" class="logo-footer" alt="Dokify">
+
+    <ul class="menu-footer list-inline float-r mx-3">
+      <li class="menu-footer-item"><a href="#">estado</a></li>
+      <li class="menu-footer-item"><a href="#">blog</a></li>
+      <li class="menu-footer-item"><a href="#">terminos</a></li>
+      <li class="menu-footer-item"><a href="#">política</a></li>
+    </ul>
   </footer>
 </div>
 
@@ -267,7 +296,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="vendor/chart.js/Chart.bundle.js"></script>
-<script src="vendor/chart.js/utils.js"></script>
+<script src="js/main.js"></script>
 <script>
 
     window.onload = function() {
@@ -278,8 +307,6 @@
         window.myDoughnut = new Chart(ctx1, config1);
         window.myDoughnut = new Chart(ctx2, config2);
     };
-
-
 
     $("#sorteable-notify").sortable().disableSelection();
 
@@ -293,6 +320,11 @@
 
     $( "#notif_alert" ).click(function() {
         $( ".notify-dialog" ).toggle( "slow", function() {
+        });
+    });
+
+    $( ".menu-toggle a" ).click(function() {
+        $( "#navBar-sidebar" ).toggle( "slow", function() {
         });
     });
 

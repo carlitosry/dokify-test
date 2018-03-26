@@ -35,6 +35,9 @@
     min-width: 250px;
   }
 
+  .show-lg{
+    display: initial !important;
+  }
   .hide-lg{
     display: none;
   }
@@ -58,9 +61,33 @@
     display: none;
   }
 
+  .report-content {
+    background-size: 90%;
+    background-position: -10rem 100%;
+  }
+
+  .navbar-sidenav{
+    .img-logo{
+      margin-left: 0 !important;
+    }
+
+    .nav-item{
+      font-size: 0.65rem;
+
+      i{
+        font-size: 1rem;
+      }
+    }
+
+  }
+
 }
 
 @include media-query-generator($q-small) {
+
+  .container{
+    margin-bottom: 1rem;
+  }
 
   @for $i from 1 through $qnt-col {
     .column-sm-#{$i} {
@@ -72,13 +99,105 @@
     display: none;
   }
 
+  .show-sm{
+    display: initial !important;
+  }
   .content-column-primary{
-
+    .columns-chart{
+      &>div{
+        margin-bottom: 1rem;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   .search-input {
     min-width: auto;
   }
+
+  .feed-news{
+    .content {
+      height: auto;
+    }
+  }
+
+  .report-content {
+    background-size: 60%;
+    background-position: left bottom;
+    .content-text {
+      padding: 1rem;
+    }
+  }
+
+  .content-clients{
+    .client {
+      width: 50% !important;
+    }
+  }
+
+  .badge-content{
+    .notify-dialog{
+      width: calc(90vw - 56px)!important;
+    }
+  }
+
+  #navBar-sidebar {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: #fff;
+
+    .navbar-sidenav {
+      height: calc(100% - 60px);
+      list-style: none;
+      top: 0;
+      left: 0;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: 0 !important;
+
+      .nav-item {
+        font-size: 1rem;
+
+        &.active{
+          border-left:none ;
+          border-bottom: $yellow solid 2px;
+        }
+
+        .nav-link{
+          color: $gray-700;
+          i{
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+
+  footer{
+    position: relative !important;
+    .menu-footer {
+      float: none;
+      width: 100%;
+      margin: 0 !important;
+      padding: 0 auto;
+      li {
+        float: none;
+        a{
+          font-size:1rem;
+        }
+      }
+    }
+    .logo-footer{
+      padding: 10px 0;
+    }
+
+  }
+
 
 }
 
@@ -90,4 +209,18 @@
     }
   }
 
+}
+
+@include media-query-generator($q-maxlarge) {
+
+  .report-content {
+    background-position: top left !important;
+  }
+
+  .navbar-sidenav {
+    padding-left: 1rem;
+    &>.nav-item {
+
+    }
+  }
 }
