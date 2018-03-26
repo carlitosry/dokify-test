@@ -8,7 +8,7 @@ It is also important to note that it has a structure of 12 columns in its layout
 
 # Files or Structure
 
-has a simple structure to understand with the folders Css, JS, IMG, SASS, VENDORS, and the file index.html all the style files are in the SASS folder and its main file is called admin.scss.
+This project has a simple structure to understand with the folders Css, JS, IMG, SASS, VENDORS, and the file index.html all the style files are in the SASS folder and its main file is called admin.scss.
 
 # Usage file with NPM
 
@@ -16,11 +16,11 @@ To use and update from sass just you need it is to use the comman line:
 
     $ npm install
   
-  and then that dependencie was installed you need run:
+and then that dependencie was installed you need run:
   
     $ gulp dev
    
-   this go to help you to watch the modification on de `index.html` file and `*.scss` files.
+this go to help you to watch the modification on de `index.html` file and `*.scss` files.
  
   
 #### Gulp Tasks available in the project
