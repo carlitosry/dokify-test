@@ -2104,8 +2104,12 @@ footer .logo-footer {
   }
   .navbar-sidenav .nav-item {
     font-size: 0.65rem;
+    text-align: center;
   }
   .navbar-sidenav .nav-item i {
+    display: block;
+    clear: both;
+    margin: 0 auto !important;
     font-size: 1rem;
   }
 }
@@ -2163,7 +2167,7 @@ footer .logo-footer {
     margin-bottom: 0;
   }
   .search-input {
-    min-width: auto;
+    min-width: auto !important;
   }
   .feed-news .content {
     height: auto;
@@ -2189,7 +2193,7 @@ footer .logo-footer {
     background: #fff;
   }
   #navBar-sidebar .navbar-sidenav {
-    height: calc(100% - 60px);
+    height: auto;
     list-style: none;
     top: 0;
     left: 0;
@@ -2199,17 +2203,19 @@ footer .logo-footer {
     padding: 0 !important;
   }
   #navBar-sidebar .navbar-sidenav .nav-item {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    text-align: left;
   }
   #navBar-sidebar .navbar-sidenav .nav-item.active {
     border-left: none;
     border-bottom: #ffc107 solid 2px;
   }
   #navBar-sidebar .navbar-sidenav .nav-item .nav-link {
+    font-size: 1.2rem;
     color: #666666;
   }
   #navBar-sidebar .navbar-sidenav .nav-item .nav-link i {
-    color: #ffc107;
+    display: inline-block;
   }
   footer {
     position: relative !important;
@@ -2289,48 +2295,20 @@ footer .logo-footer {
   flex-direction: column;
 }
 
-.navbar-sidenav .nav-item.active {
-  position: relative;
-  font-weight: bold;
-  border-left: solid #ffc107 3px;
-  border-top: solid 1px #dedede;
-  border-bottom: solid 1px #dedede;
-  -webkit-box-shadow: -2px 0 1px 0px rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: -2px 0 1px 0px rgba(0, 0, 0, 0.19);
-  box-shadow: -2px 0 1px 0px rgba(0, 0, 0, 0.19);
-}
-
-.navbar-sidenav .nav-item.active .nav-link {
-  color: #666666;
-}
-
-.navbar-sidenav .nav-item.active .nav-link i {
-  color: #ffc107;
-}
-
-.navbar-sidenav .nav-item.active:before {
-  content: "";
-  border-right-width: 2px;
-  border-right-style: solid;
-  -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#dedede)) 1 100%;
-  -webkit-border-image: -webkit-linear-gradient(transparent, #dedede) 1 100%;
-  -moz-border-image: -moz-linear-gradient(transparent, #dedede) 1 100%;
-  -o-border-image: -o-linear-gradient(transparent, #dedede) 1 100%;
-  border-image: linear-gradient(to bottom, transparent, #dedede) 1 100%;
-  height: 30px;
-  width: 10px;
-  POSITION: absolute;
-  display: block;
-  right: 0;
-  top: -31px;
-}
-
 .navbar-sidenav > .nav-item {
   padding: 0;
 }
 
+.navbar-sidenav > .nav-item .nav-link {
+  color: #999999;
+  padding: 1em;
+  font-size: .9rem;
+}
+
 .navbar-sidenav > .nav-item i {
+  font-size: 1.4rem;
   margin-right: 0.5rem;
+  color: #adb5bd;
 }
 
 .navbar-sidenav > .nav-item:hover {
@@ -2359,13 +2337,44 @@ footer .logo-footer {
   box-shadow: none;
 }
 
-.navbar-sidenav > .nav-item .nav-link {
-  color: #999999;
-  padding: 1em;
-}
-
 .navbar-sidenav > .nav-item:not(.active) {
   border-right: solid 2px #dedede;
+}
+
+.navbar-sidenav > .nav-item.active {
+  position: relative;
+  font-weight: bold;
+  border-left: solid #ffc107 3px;
+  border-top: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+  -webkit-box-shadow: -2px 0 1px 0px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: -2px 0 1px 0px rgba(0, 0, 0, 0.19);
+  box-shadow: -2px 0 1px 0px rgba(0, 0, 0, 0.19);
+}
+
+.navbar-sidenav > .nav-item.active .nav-link {
+  color: #666666;
+}
+
+.navbar-sidenav > .nav-item.active .nav-link i {
+  color: #ffc107;
+}
+
+.navbar-sidenav > .nav-item.active:before {
+  content: "";
+  border-right-width: 2px;
+  border-right-style: solid;
+  -webkit-border-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#dedede)) 1 100%;
+  -webkit-border-image: -webkit-linear-gradient(transparent, #dedede) 1 100%;
+  -moz-border-image: -moz-linear-gradient(transparent, #dedede) 1 100%;
+  -o-border-image: -o-linear-gradient(transparent, #dedede) 1 100%;
+  border-image: linear-gradient(to bottom, transparent, #dedede) 1 100%;
+  height: 30px;
+  width: 10px;
+  POSITION: absolute;
+  display: block;
+  right: 0;
+  top: -31px;
 }
 
 .navbar-sidenav .img-logo {

@@ -73,8 +73,14 @@
 
     .nav-item{
       font-size: 0.65rem;
+      text-align: center;
 
-      i{
+
+      i {
+        display: block;
+        clear: both;
+        margin: 0 auto !important;
+
         font-size: 1rem;
       }
     }
@@ -114,7 +120,7 @@
   }
 
   .search-input {
-    min-width: auto;
+    min-width: auto !important;
   }
 
   .feed-news{
@@ -151,7 +157,7 @@
     background: #fff;
 
     .navbar-sidenav {
-      height: calc(100% - 60px);
+      height: auto;
       list-style: none;
       top: 0;
       left: 0;
@@ -161,7 +167,8 @@
       padding: 0 !important;
 
       .nav-item {
-        font-size: 1rem;
+        font-size: 1.5rem;
+        text-align: left;
 
         &.active{
           border-left:none ;
@@ -169,9 +176,12 @@
         }
 
         .nav-link{
+          font-size: 1.2rem;
           color: $gray-700;
+
           i{
-            color: $yellow;
+            display: inline-block;
+
           }
         }
       }
