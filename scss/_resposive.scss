@@ -219,6 +219,11 @@
     }
   }
 
+  .search-item {
+    width: calc(100% - 53px);
+  }
+
+
 }
 
 @include media-query-generator($q-maxlarge) {
